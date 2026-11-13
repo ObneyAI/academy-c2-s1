@@ -1,0 +1,54 @@
+{
+  "captured": "2026-11-04",
+  "source": "src/App.tsx",
+  "slides": [
+    {
+      "n": 1,
+      "label": "Every session"
+    },
+    {
+      "n": 2,
+      "label": "Today"
+    },
+    {
+      "n": 3,
+      "label": "Context Lab: the four stops"
+    },
+    {
+      "n": 4,
+      "label": "Basics 1: tokens"
+    },
+    {
+      "n": 5,
+      "label": "Basics 2: files"
+    },
+    {
+      "n": 6,
+      "label": "Basics 3: context"
+    },
+    {
+      "n": 7,
+      "label": "Exercise 1: tool requests"
+    },
+    {
+      "n": 8,
+      "label": "Your folder"
+    },
+    {
+      "n": 9,
+      "label": "Set it up"
+    },
+    {
+      "n": 10,
+      "label": "Try these"
+    },
+    {
+      "n": 11,
+      "label": "Save and return"
+    },
+    {
+      "n": 12,
+      "label": "Next Friday"
+    }
+  ]
+}

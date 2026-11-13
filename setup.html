@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Set up your Academy folder | AI Leadership Academy</title>
+<style>
+  :root { --bg:#f5f1e4; --card:#fff; --ink:#142C37; --sub:#4d6470; --gold:#9B7226; --gold-ink:#80601e; --line:#ded6c3; --accent:#1d9ca3; }
+  * { box-sizing: border-box; }
+  body { margin:0; background:var(--bg); color:var(--ink); font:18px/1.5 system-ui,-apple-system,"Segoe UI",sans-serif; }
+  main { max-width:760px; margin:40px auto; padding:44px; background:var(--card); border-top:6px solid var(--gold); }
+  .eyebrow { margin:0 0 6px; font-size:14px; letter-spacing:.12em; color:var(--gold-ink); }
+  h1 { margin:0 0 10px; font-size:38px; line-height:1.1; }
+  .lede { margin:0 0 30px; color:var(--sub); }
+  ol { list-style:none; margin:0; padding:0; counter-reset:step; }
+  li { counter-increment:step; position:relative; padding:0 0 26px 54px; }
+  li::before { content:counter(step); position:absolute; left:0; top:0; width:36px; height:36px; border-radius:50%; background:var(--accent); color:#fff; font-weight:700; display:flex; align-items:center; justify-content:center; }
+  h2 { margin:4px 0 4px; font-size:21px; }
+  p { margin:0 0 10px; }
+  .muted { color:var(--sub); }
+  .download { display:inline-block; margin-top:4px; padding:12px 20px; border-radius:10px; background:var(--ink); color:#fff; font-weight:600; text-decoration:none; }
+  .download:hover, .download:focus-visible { background:#0b1c24; }
+  .copy { display:flex; gap:10px; align-items:stretch; margin-top:6px; }
+  .copy code { flex:1; font:17px/1.4 ui-monospace,"IBM Plex Mono",Menlo,monospace; background:#f3f6f7; border:1px solid #c8d4da; border-radius:10px; padding:12px 14px; }
+  .copy button { flex-shrink:0; font:inherit; font-weight:600; padding:0 18px; border-radius:10px; border:2px solid var(--accent); background:#fff; color:var(--ink); cursor:pointer; }
+  .copy button:hover, .copy button:focus-visible { background:#e8f7f8; }
+  .copy button.done { background:var(--accent); color:#fff; }
+  hr { border:0; border-top:1px solid var(--line); margin:10px 0 28px; }
+  .help { margin-top:28px; padding:14px 18px; background:#faf7ef; border-radius:10px; }
+  @media (max-width:600px) { main { margin:0; padding:24px 18px; } .copy { flex-direction:column; } .copy button { padding:10px; } }
+</style>
+</head>
+<body>
+<main>
+  <p class="eyebrow">AI LEADERSHIP ACADEMY · SESSION 1</p>
+  <h1>Set up your Academy folder</h1>
+  <p class="lede">Do this on the laptop you'll bring to every session.</p>
+
+  <ol>
+    <li>
+      <h2>Download the Academy folder</h2>
+      <p class="muted">Unzip it. You get a folder named <strong>ai-leadership-academy-main</strong>. You can rename it, for example to <strong>Academy</strong>. Keep it somewhere easy to find.</p>
+      <a class="download" href="https://github.com/ObneyAI/ai-leadership-academy/archive/refs/heads/main.zip">Download the Academy folder (ZIP)</a>
+      <p class="muted" style="margin-top:10px">No GitHub account or other software is needed.</p>
+    </li>
+    <li>
+      <h2>Open your approved desktop assistant</h2>
+      <p class="muted">Sign in with the account you'll use throughout the Academy.</p>
+    </li>
+    <li>
+      <h2>Connect the Academy folder</h2>
+      <p class="muted">Select the folder that contains <code>ACADEMY.md</code> and allow access to it.</p>
+    </li>
+    <li>
+      <h2>Paste the opening line</h2>
+      <div class="copy"><code id="open">Read ACADEMY.md and help me get started.</code><button type="button" data-copy="open">Copy</button></div>
+    </li>
+  </ol>
+
+  <hr>
+
+  <h2>Before you leave: find it again</h2>
+  <p class="muted">Save a short note and open the file. Then start a new chat with the same Academy folder and ask:</p>
+  <div class="copy"><code id="return">Remind me what I was exploring.</code><button type="button" data-copy="return">Copy</button></div>
+
+  <p class="help">Stuck? Raise your hand and a helper will come to you.</p>
+  <p class="muted" role="status" aria-live="polite" id="status"></p>
+</main>
+<script>
+  document.querySelectorAll("[data-copy]").forEach((btn) => {
+    btn.addEventListener("click", async () => {
+      const text = document.getElementById(btn.dataset.copy).textContent;
+      try {
+        await navigator.clipboard.writeText(text);
+      } catch {
+        const range = document.createRange();
+        range.selectNodeContents(document.getElementById(btn.dataset.copy));
+        const sel = getSelection(); sel.removeAllRanges(); sel.addRange(range);
+        document.execCommand("copy");
+      }
+      btn.textContent = "Copied"; btn.classList.add("done");
+      document.getElementById("status").textContent = "Copied: " + text;
+      setTimeout(() => { btn.textContent = "Copy"; btn.classList.remove("done"); }, 2000);
+    });
+  });
+</script>
+</body>
+</html>

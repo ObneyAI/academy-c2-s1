@@ -1,0 +1,65 @@
+{
+  "captured": "2026-11-04",
+  "sourceCommit": "c92e94b",
+  "sourceDeploy": "7c472d30",
+  "boardWidth": 480,
+  "boardHeight": 270,
+  "slides": [
+    {
+      "n": 1,
+      "label": "Every session"
+    },
+    {
+      "n": 2,
+      "label": "Today"
+    },
+    {
+      "n": 3,
+      "label": "Context Lab: the four stops"
+    },
+    {
+      "n": 4,
+      "label": "Basics 1: tokens"
+    },
+    {
+      "n": 5,
+      "label": "Basics 2: files"
+    },
+    {
+      "n": 6,
+      "label": "Basics 3: context"
+    },
+    {
+      "n": 7,
+      "label": "Exercise 1: tool requests"
+    },
+    {
+      "n": 8,
+      "label": "Your assistant works with files"
+    },
+    {
+      "n": 9,
+      "label": "Give your Academy work a home"
+    },
+    {
+      "n": 10,
+      "label": "Choose the folder and review access"
+    },
+    {
+      "n": 11,
+      "label": "Set it up"
+    },
+    {
+      "n": 12,
+      "label": "Try these"
+    },
+    {
+      "n": 13,
+      "label": "Save and return"
+    },
+    {
+      "n": 14,
+      "label": "Next Friday"
+    }
+  ]
+}
